@@ -4,7 +4,10 @@
 
 body{
   background-color:rgba(21,32,43,1.00);
+  background-image: url("image.jpg");
+  background-repeat: no-repeat;
 }
+
 
 main > .container {
   color: #f5f5f5;
