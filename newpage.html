@@ -11,11 +11,28 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon-dark.png">
+    <link href="style.css">
     <title>YHSTVHD'sWorks</title>
 </head>
 
 <body>
     <h1>YHSTVHD'sWorks</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">YHSTVHD'sWorks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Features</a>
+                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link disabled" href="#">Disabled</a>
+            </div>
+        </div>
+    </nav>
+
 
     <h2 class="fas fa-link fa-2x"> Links</h2>
 
@@ -73,7 +90,7 @@
                         C#
                     </h4>
                     <h4 class="fab fa-java"> Java</h4>
-                    <h4>    VB(WSH)</h4>
+                    <h4> VB(WSH)</h4>
                 </td>
             </tr>
             <tr>
@@ -183,6 +200,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var $win = $(window),
+                $main = $('main'),
+                $nav = $('nav'),
+                navHeight = $nav.outerHeight(),
+                navPos = $nav.offset().top,
+                fixedClass = 'fixed-top';
+
+            $win.on('load scroll', function () {
+                var value = $(this).scrollTop();
+                if (value > navPos) {
+                    $nav.addClass(fixedClass);
+                    $main.css('margin-top', navHeight);
+                } else {
+                    $nav.removeClass(fixedClass);
+                    $main.css('margin-top', '0');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
